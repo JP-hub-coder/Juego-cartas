@@ -1,0 +1,45 @@
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(green, green, green);
+    background-repeat: no-repeat;
+}
+
+.carta_abajo{
+    background-image: url(https://deckofcardsapi.com/static/img/back.png);
+    position: absolute;
+    width: 226px;
+    height: 315px;
+    top: 15px;
+}
+
+.contador_actual{
+    position: absolute;
+    top: 380px;
+    font-size: clamp(8px,5vw,25px);
+}
+
+.boton_pedir, 
+.boton_plantarse{
+    background-color: #2b2b2b;
+    color: white;
+    width: 140px;
+    height: 50px;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 8px;
+    border: 3px solid #111;
+    cursor: pointer;
+    box-shadow: -2px 3px #222, -4px 6px black;
+    margin-left: 15px;
+}
+
+.boton_pedir:active, 
+.boton_plantarse:active{
+    margin-top: 6px;   /* baja el botón */
+    height: 44px;      /* se comprime */
+    box-shadow: inset -4px 4px #222;
+}
