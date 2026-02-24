@@ -2,28 +2,45 @@ body {
     width: 100%;
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
-    background: linear-gradient(green, green, green);
+    background-color: #156e07;
     background-repeat: no-repeat;
+}
+
+p {
+    color: gold;
+    font-weight: 900;
+    margin-top: 0px;
+}
+
+.big_container{ 
+    width: 80%;
+    margin-top: 200px;
+    align-items: center;
+    justify-items: center;
+}
+
+.cartas{
+    display: flex;
+    gap: 20px;
 }
 
 .carta_abajo{
     background-image: url(https://deckofcardsapi.com/static/img/back.png);
-    position: absolute;
     width: 226px;
     height: 315px;
-    top: 15px;
 }
 
 .contador_actual{
-    position: absolute;
-    top: 380px;
+    margin-top: 10px;
     font-size: clamp(8px,5vw,25px);
+    justify-self: center;
 }
 
 .boton_pedir, 
-.boton_plantarse{
+.boton_plantarse,
+.boton_reiniciar{
     background-color: #2b2b2b;
     color: white;
     width: 140px;
@@ -35,11 +52,43 @@ body {
     cursor: pointer;
     box-shadow: -2px 3px #222, -4px 6px black;
     margin-left: 15px;
+    margin-top: 10px;
+}
+
+.boton_reiniciar{
+    background-color: red;
+    box-shadow: -2px 3px #740000, -4px 6px rgb(107, 0, 0);
+    border: 3px solid #520000;
+}
+
+.boton_reiniciar:active{
+    margin-top: 6px;   
+    height: 44px;      
+    box-shadow: inset -4px 4px #830000;
+}
+
+.buttons {
+    width: 315px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .boton_pedir:active, 
 .boton_plantarse:active{
-    margin-top: 6px;   /* baja el botón */
-    height: 44px;      /* se comprime */
+    margin-top: 6px;   
+    height: 44px;      
     box-shadow: inset -4px 4px #222;
 }
+
+.titulo{
+    position: absolute;
+    top: 5px;
+    text-align: center;
+    color: gold;
+    background-color: rgb(36, 128, 8);
+    border-style: none;
+    border-radius: 16px;
+    padding: 5px;
+    font-style: italic;
+}
+
