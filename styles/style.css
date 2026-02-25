@@ -2,10 +2,11 @@ body {
     width: 100%;
     min-height: 100vh;
     display: flex;
-    /* align-items: center; */
     justify-content: center;
+    align-items: flex-start; /* importante */
     background-color: #156e07;
     background-repeat: no-repeat;
+    padding-top: 200px; /* baja todo el contenido */
 }
 
 p {
@@ -14,28 +15,63 @@ p {
     margin-top: 0px;
 }
 
-.big_container{ 
-    width: 80%;
-    margin-top: 200px;
+.titulo{
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: gold;
+    background-color: rgb(36, 128, 8);
+    border-style: none;
+    border-radius: 16px;
+    padding: 5px;
+    font-style: italic;
+}
+
+.big_container {
+    width: min(90%, 900px);   /* Nunca pasa de 900px pero usa 90% en pantallas pequeñas */
+    margin: clamp(20px, 6vh, 80px) auto 0 auto; 
+    padding: 0 clamp(10px, 3vw, 30px); 
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-items: center;
 }
 
 .cartas{
     display: flex;
     gap: 20px;
+    flex-wrap: wrap; /* permite que bajen si no caben */
+    justify-content: center;
+}
+
+.cartas img {
+    width: clamp(120px, 22vw, 220px);
+    height: auto;
 }
 
 .carta_abajo{
     background-image: url(https://deckofcardsapi.com/static/img/back.png);
-    width: 226px;
-    height: 315px;
+    width: clamp(120px, 25vw, 226px);
+    aspect-ratio: 226 / 315;
+    background-size: cover;
 }
 
 .contador_actual{
-    margin-top: 10px;
-    font-size: clamp(8px,5vw,25px);
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: clamp(14px, 5vw, 25px);
     justify-self: center;
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center; /* centra todo */
+    align-items: center;
+    gap: 20px; /* espacio entre botones */
+    flex-wrap: wrap; /* si no caben bajan */
+    margin-top: 20px;
 }
 
 .boton_pedir, 
@@ -43,10 +79,10 @@ p {
 .boton_reiniciar{
     background-color: #2b2b2b;
     color: white;
-    width: 140px;
-    height: 50px;
+    width: clamp(100px, 30vw, 140px);
+    height: clamp(40px, 8vw, 50px);
     font-weight: bold;
-    font-size: 18px;
+    font-size: clamp(14px, 4vw, 18px);
     border-radius: 8px;
     border: 3px solid #111;
     cursor: pointer;
@@ -57,8 +93,8 @@ p {
 
 .boton_reiniciar{
     background-color: red;
-    box-shadow: -2px 3px #740000, -4px 6px rgb(107, 0, 0);
-    border: 3px solid #520000;
+    box-shadow: -2px 3px #740000, -4px 6px rgb(39, 0, 0);
+    margin-left: 0; /* elimina el margen izquierdo para que quede centrado */
 }
 
 .boton_reiniciar:active{
@@ -67,28 +103,9 @@ p {
     box-shadow: inset -4px 4px #830000;
 }
 
-.buttons {
-    width: 315px;
-    display: flex;
-    justify-content: space-between;
-}
-
 .boton_pedir:active, 
 .boton_plantarse:active{
     margin-top: 6px;   
     height: 44px;      
     box-shadow: inset -4px 4px #222;
 }
-
-.titulo{
-    position: absolute;
-    top: 5px;
-    text-align: center;
-    color: gold;
-    background-color: rgb(36, 128, 8);
-    border-style: none;
-    border-radius: 16px;
-    padding: 5px;
-    font-style: italic;
-}
-
