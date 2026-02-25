@@ -10,7 +10,7 @@ let total = 0;
 let deck_id = ""; 
 
 function baraja_principal() {
-    fetch("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1")
+    fetch("https://deckofcardsapi.com/api/deck/dr4z1k1f7hwh/shuffle/")
     .then (function(response) {
         return response.json();
     })
@@ -38,6 +38,7 @@ function sacar_carta() {
             } else {
                 valor_carta = parseInt(valor_carta);
             }
+
             total = total + valor_carta;
             contador_actual.innerHTML =
             "Actualmente tienes: " + total
@@ -96,7 +97,7 @@ plantar_boton.addEventListener("click", function(){
 
         setTimeout(function(){
             contador_actual.innerHTML = "El dealer ha jugado, calculando resultados...";
-        }, 2000);
+        }, 1500);
         
         setTimeout(function(){
             if (total_dealer > 21 || total > total_dealer) { 
@@ -106,7 +107,7 @@ plantar_boton.addEventListener("click", function(){
             } else {
                 contador_actual.innerHTML = "Lo siento, has perdido <br> Tu total fue de: " + total;
             }
-        }, 4000);
+        }, 3500);
 
         img_dealer.src = data["cards"][1]["image"];
 
